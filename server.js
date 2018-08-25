@@ -10,11 +10,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 class Table {
-    constructor(name,time,number) {
-        this.routeName = name.toLowerCase(),
+    constructor(name,time,number, phoneNumber) {
+        this.routeName = name
         this.name = name.toLowerCase().replace(/^./, e=>e.toUpperCase()),
         this.time = time,
-        this.number = number
+        this.number = number,
+        this.phoneNumber = phoneNumber?phoneNumber:null
     }
 }
 
