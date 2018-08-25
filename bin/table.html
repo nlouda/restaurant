@@ -37,20 +37,20 @@
 
   <script type="text/javascript">
 
-    $.get("/api", function(data) {
-      for (var i = 0; i < data.length; i++) {
-        var wellSection = $("<div>");
+    $.get("/api/tables", function(data) {
+      for (let i = 0; i < data.length; i++) {
+        let wellSection = $("<div>");
         wellSection.addClass("well");
         wellSection.attr("id", "table-well-" + i);
         $("#well-section").append(wellSection);
 
         $("#table-well-" + i).append("<h2>" + data[i].name + "</h2>");
-        $("#table-well-" + i).append("<h3>Time: " + data[i].time + "</h4>");
-        $("#table-well-" + i).append("<h3>Number: " + data[i].number + "</h4>");
-        $("#table-well-" + i).append("<h3>Phone Number: " + data[i].phoneNumber + "</h4>");
+        $("#table-well-" + i).append("<h3>Email: " + data[i].email + "</h4>");
+        $("#table-well-" + i).append("<h3>Unique ID: " + data[i].uniqueId + "</h4>");
+        $("#table-well-" + i).append("<h3>Phone Number: " + data[i].phone + "</h4>");
       }
     });
   </script>
-  
+
 </body>
 </html>
