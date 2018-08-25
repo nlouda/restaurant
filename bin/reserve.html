@@ -56,11 +56,6 @@
                                 <input type="text" class="form-control" id="age">
                             </div>
 
-                            <div class="form-group">
-                                <label for="unique"><strong>Unique ID</strong></label>
-                                <input type="text" class="form-control" id="force-points">
-                            </div>
-
                         </form>
                         <br>
                         <div class="text-left">
@@ -80,18 +75,17 @@
         // Question: What does this code do?
         $("#add-btn").on("click", function (event) {
             event.preventDefault();
-            var newCharacter = {
+            const newTable = {
                 name: $("#name").val().trim(),
-                role: $("#role").val().trim(),
-                age: $("#age").val().trim(),
-                forcePoints: $("#force-points").val().trim()
+                phone: $("#phone").val().trim(),
+                email: $("#email").val().trim()
             };
 
             // Question: What does this code do??
-            $.post("/api/characters", newCharacter)
+            $.post("/api/tables", newTable)
                 .then(function (data) {
                     console.log("add.html", data);
-                    alert("Adding character...");
+                    alert("Adding reservation...");
                 });
         });
     </script>
