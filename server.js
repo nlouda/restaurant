@@ -10,21 +10,21 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 class Table {
-    constructor(name,time,number) {
-        this.routeName = name.toLowerCase(),
+    constructor(name,email,phone) {
+        this.routeName = name
         this.name = name.toLowerCase().replace(/^./, e=>e.toUpperCase()),
-        this.time = time,
-        this.number = number
-    }
-}
+        this.email = email,
+        this.phone = phone?phone:null,
+        this.uniqueId = Math.floor(Math.random()*100)
+    };
+};
 
 const tables = [
-    new Table("webbFamily", "7pm", 5),
-    new Table("nancyFamily", "8pm", 6),
-    new Table("waltFamily", "6pm", 4)
+    new Table("webb Family", "test@test.com"),
+    new Table("nancy Family", "test@test.com"),
+    new Table("walt Family", "test@test.com")
 ];
 
-console.log(tables);
 
 app.get("/", (req, res)=> {
   res.sendFile(path.join(__dirname, "view.html"));
@@ -35,7 +35,7 @@ app.get("/reserve", (req, res)=> {
 });
 
 app.get("/table", (req, res)=> {
-  res.sendFile(path.join(__dirname, "table.html"));
+  res.sendFile(path.join(__dirname, "/bin/table.html"));
 });
 
 app.get("/api/tables", (req, res)=> {

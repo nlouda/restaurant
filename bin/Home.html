@@ -9,11 +9,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
 
 </head>
 
 <body>
-
     <div class="container">
         <div class="jumbotron">
             <h1 class="text-center" style="font-size:60px"><span class="fa fa-fire"></span>Hot Restaurant</h1>
@@ -31,11 +32,9 @@
                 </a>
             </div>
         </div>
-    </div>
 
     <script type="text/javascript">
-        // Question: What does this code do?
-        $("#add-btn").on("click", function (event) {
+        $("#add-btn ").on("click ", function (event) {
             event.preventDefault();
             const newTable = {
                 name: $("#name").val().trim(),
@@ -43,7 +42,6 @@
                 email: $("#email").val().trim()
             };
 
-            // Question: What does this code do??
             $.post("/api/tables", newTable)
                 .then(function (data) {
                     console.log("add.html", data);
@@ -51,7 +49,6 @@
                 });
         });
     </script>
-
 </body>
 
 </html>
