@@ -8,6 +8,8 @@ const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(express.static('bin'));
+
 
 class Table {
     constructor(name,email,phone) {
@@ -27,7 +29,9 @@ const tables = [
 
 
 app.get("/", (req, res)=> {
-  res.sendFile(path.join(__dirname, "view.html"));
+    res.sendFile(path.join(__dirname, "/bin/Home.html"));
+    // res.sendFile(path.join(__dirname, "/bin/style.css"));
+    // res.sendFile(path.join(__dirname, "/bin/reset.css"));
 });
 
 app.get("/reserve", (req, res)=> {

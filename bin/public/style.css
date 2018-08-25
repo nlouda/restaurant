@@ -1,4 +1,4 @@
-.container-fluid {
+.container {
   margin: 0;
   padding: 0;
   background-position: center center;
@@ -8,6 +8,6 @@
   height: 100vh;
   background-image: url("https://images.pexels.com/photos/51115/restaurant-wine-glasses-served-51115.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
 }
-
+/* 
 .container {
-}
+} */
