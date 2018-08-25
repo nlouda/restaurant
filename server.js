@@ -29,13 +29,9 @@ const tables = [
 
 
 app.get("/", (req, res)=> {
-<<<<<<< HEAD
-  res.sendFile(path.join(__dirname, "home.html"));
-=======
     res.sendFile(path.join(__dirname, "/bin/Home.html"));
     // res.sendFile(path.join(__dirname, "/bin/style.css"));
     // res.sendFile(path.join(__dirname, "/bin/reset.css"));
->>>>>>> 5ccc1e2ed9df24d9afe909ea22acc685c0ad2d1c
 });
 
 app.get("/reserve", (req, res)=> {
